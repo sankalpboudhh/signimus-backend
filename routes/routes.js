@@ -1,7 +1,6 @@
 const express = require("express");
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
-const mongoose = require("mongoose");
 const UserModel = require("../model/model");
 
 const router = express.Router();
@@ -36,7 +35,6 @@ router.post("/login", async (req, res, next) => {
           lastname: user.lastname,
           token: { token },
         };
-        console.log("backend sendData :", sendData);
         return res.json(sendData);
       });
     } catch (error) {
